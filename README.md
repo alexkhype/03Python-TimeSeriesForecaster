@@ -14,14 +14,8 @@
 Este proyecto predice la cantidad de taxis necesarios por hora en aeropuertos para optimizar la disponibilidad de conductores durante las horas pico, usando modelos de machine learning basados en series temporales y remuestreo horario.
 
 ## Datos
-Se utilizaron XXX conjuntos de datos principales:  
-- XXXX **games.csv**: Contiene registros de ventas por juego, plataforma, año, y regiones (Norteamérica, Europa, Japón, y resto del mundo).  
-- XXXX **scraping.csv**: Dataset auxiliar para completar datos faltantes.  
-
-Características clave incluyen:  
-- XXXX 16,500 registros históricos.  
-- XXXX Variables: nombre, plataforma, año, género, clasificación ESRB, ventas por región, calificaciones de críticos y usuarios.  
-- XXXX Datos limpios y normalizados para análisis.  
+Se utilizó un conjunto de datos principal:  
+- **taxi.csv**: DataFrame con 26,496 registros horarios de marzo a agosto de 2018, que contiene el número de órdenes de taxis en aeropuertos para cada intervalo.
 
 ## Análisis
 - Se analizó el histórico de órdenes de taxis horario entre marzo y agosto de 2018, identificando tendencias y estacionalidades diarias y semanales.
