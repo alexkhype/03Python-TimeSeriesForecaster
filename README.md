@@ -1,4 +1,4 @@
-# Análisis de Ventas Históricas de Videojuegos
+# Predicción de Taxis Necesarios por Hora
 
 ## Tabla de Contenidos
 - [Descripción](#Descripción)
@@ -11,7 +11,7 @@
 - [Contacto](#Contacto)
 
 ## Descripción
-XXXX Este proyecto analiza un conjunto de datos históricos de ventas de videojuegos para comprender las preferencias de los consumidores, identificar tendencias por plataforma, región y género, y generar recomendaciones para estrategias de mercado en la industria del entretenimiento.
+Este proyecto predice la cantidad de taxis necesarios por hora en aeropuertos para optimizar la disponibilidad de conductores durante las horas pico, usando modelos de machine learning basados en series temporales y remuestreo horario.
 
 ## Datos
 Se utilizaron XXX conjuntos de datos principales:  
@@ -24,24 +24,26 @@ Características clave incluyen:
 - XXXX Datos limpios y normalizados para análisis.  
 
 ## Análisis
-El enfoque incluyó:  
-- XXXX Análisis exploratorio para identificar tendencias de ventas por región y género.  
-- XXXX Visualizaciones para descubrir patrones.  
-- XXXX Modelado predictivo simple para estimar ventas futuras basado en variables históricas.  
-- XXXX Validación cruzada para evaluar modelos.  
+- Se analizó el histórico de órdenes de taxis horario entre marzo y agosto de 2018, identificando tendencias y estacionalidades diarias y semanales.
+- Se comprobó estacionariedad con prueba ADF y se seleccionaron variables predictivas clave usando ACF y PACF.
+- Se crearon características adicionales como medias móviles y variables de tiempo para mejorar la precisión.
+- Se dividió el dataset para una validación robusta evitando información futura en el modelo.
+- Se entrenaron y ajustaron múltiples modelos, incluyendo regresión lineal, DecisionTree, RandomForest, LGBM y CatBoost, usando GridSearchCV y validación cruzada específica para series temporales.
 
 ## Tecnologías y herramientas
-- XXXX Python 3.9  
-- XXXX Pandas, NumPy para manipulación de datos  
-- XXXX Matplotlib, Seaborn para visualización  
-- XXXX Scikit-learn para modelado predictivo  
-- XXXX Jupyter Notebook para desarrollo interactivo  
+- Python 3.9 para desarrollo y análisis
+- Pandas, NumPy para manipulación y análisis de datos
+- Matplotlib, sktime para visualización de series temporales
+- statsmodels para análisis estadístico y diagnóstico de series temporales
+- Scikit-learn, LightGBM, CatBoost, XGBoost para modelado y validación de machine learning
+- Jupyter Notebook para desarrollo interactivo y documentación del proyecto
 
 ## Resultados
-- XXXX Los géneros Action y Sports lideran ventas globales.  
-- XXXX Norteamérica y Europa son los mercados con mayor volumen.  
-- XXXX Modelos predictivos lograron un R2 medio de 0.75 en test set.  
-- XXXX Recomendaciones para enfocar nuevos lanzamientos en plataformas con crecimiento positivo.  
+- Modelos de boosting como LGBMRegressor y CatBoostRegressor superaron a los modelos base y de árbol tradicionales en RMSE.
+- LGBMRegressor mostró mejor precisión para anticipar picos de demanda en horas críticas.
+- CatBoostRegressor ofrece predicciones más estables pero menos sensibles a extremos.
+- El modelo base de regresión lineal logró un RMSE de referencia de 46.02.
+- La selección del modelo depende de la prioridad: exactitud en picos o estabilidad en predicciones.
 
 ## Contribuciones
 Bienvenidas sugerencias, correcciones y nuevas visualizaciones. Por favor, abre un issue o pull request para colaborar.
